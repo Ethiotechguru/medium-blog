@@ -33,9 +33,32 @@ In this example, the *DatabaseConnection* class has a private constructor, which
 ### The Factory pattern
 The Factory pattern is a design pattern that helps to create objects without specifying the exact class of object that will be created. This is useful when you want to create objects based on some input or condition, but you don’t want the code that creates the objects to know the specific details of how the objects are created.
 <hr>
+Here’s an example of how the Factory pattern works in code:
 
+```c++
+class CarFactory {
+    public static Car createCar(String type) {
+        if (type.equals("sedan")) {
+            return new Sedan();
+        } else if (type.equals("truck")) {
+            return new Truck();
+        } else {
+            return null;
+        }
+    }
+}
+
+class Sedan extends Car {
+    // class implementation
+}
+
+class Truck extends Car {
+    // class implementation
+}
+```
 ### The Observer pattern
 The Observer pattern is a design pattern that allows objects to be notified of changes to other objects. This is useful when you have multiple objects that need to be updated when something changes in another object, and you want to avoid tight coupling between the objects.
+
 <hr>
 
 ### The Decorator pattern
