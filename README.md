@@ -9,7 +9,7 @@ OOP Design pattern blog for medium.com
 ### The Singleton pattern
 The Singleton pattern is a design pattern that ensures that a class has only one instance (or object) at any given time, while providing a global access point to that instance. This is useful in situations where you only want one object of a certain class to exist, such as when you have a single database connection or a single configuration object.
 Here’s an example of how the Singleton pattern works in code:
-```Java 
+```C 
 class DatabaseConnection {
     private static DatabaseConnection instance;
 
