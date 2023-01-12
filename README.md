@@ -67,6 +67,48 @@ In summary, The Factory pattern is a way of creating objects without specifying 
 ### The Observer pattern
 The Observer pattern is a design pattern that allows objects to be notified of changes to other objects. This is useful when you have multiple objects that need to be updated when something changes in another object, and you want to avoid tight coupling between the objects.
 
+Here’s an example of how the Observer pattern works in code:
+
+```C++
+class WeatherData {
+    private List<Observer> observers;
+    private float temperature;
+    private float humidity;
+    private float pressure;
+
+    public WeatherData() {
+        observers = new ArrayList<Observer>();
+    }
+
+    public void registerObserver(Observer o) {
+        observers.add(o);
+    }
+
+    public void removeObserver(Observer o) {
+        int i = observers.indexOf(o);
+        if (i >= 0) {
+            observers.remove(i);
+        }
+    }
+
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update(temperature, humidity, pressure);
+        }
+    }
+
+    public void measurementsChanged() {
+        notifyObservers();
+    }
+
+    public void setMeasurements(float temperature, float humidity, float pressure) {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        measurementsChanged();
+    }
+}
+```
 <hr>
 
 ### The Decorator pattern
