@@ -20,3 +20,7 @@ The Observer pattern is a design pattern that allows objects to be notified of c
 
 ### The Decorator pattern
 It is a design pattern that allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class. This is useful when you want to add new features to an object without changing its class or when you want to add features to an object at runtime.
+<hr>
+
+### The Command pattern
+The Command pattern is a design pattern that encapsulates a request as an object, separating the execution of a command from the object that invokes it. This is useful when you want to have a single point of control for executing commands and when you want to be able to undo or redo those commands.
