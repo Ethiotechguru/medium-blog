@@ -110,6 +110,12 @@ class WeatherData {
     }
 }
 ```
+
+In this example, the WeatherData class has a list of observers, which are objects that have registered to be notified when the weather data changes. The *registerObserver()* method is used to add new observers to the list, and the *removeObserver()* method is used to remove them. The *notifyObservers()* method is used to notify all the observers in the list when the weather data changes. When measurements changes (e.g. the temperature or the humidity changes) WeatherData class use *measurementsChanged()* method to notify all the observers by calling *notifyObservers()* method, each observer have an *update()* method that get triggered by the call and it would update the observer with the new measurements.
+
+This way, the WeatherData class and the observer classes are loosely coupled, meaning that they don't depend on each other in a specific way. The observer classes only need to implement the update() method, and the WeatherData class only needs to know that the observers have this method. This allows for flexibility, maintainability, and ease of modification of code.
+
+In summary, the Observer pattern is a way of allowing objects to be notified of changes to other objects. It provides a way for objects to communicate with each other without being tightly coupled, which means that objects don’t need to know the details of how other objects work. It’s a way to enable one-to-many communication and to decouple the objects that trigger an event from the objects that respond to it, This allows for flexibility and reusability, as well as ease of modification of the code.
 <hr>
 
 ### The Decorator pattern
