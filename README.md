@@ -27,6 +27,7 @@ class DatabaseConnection {
     // other methods for working with the database connection go here
 }
 ```
+In this example, the DatabaseConnection class has a private constructor, which prevents outside code from instantiating it. The only way to create an instance of the class is by calling the getInstance() method, which is a static method. If an instance of the class has not been created yet, the getInstance() method creates one and assigns it to the instance variable. If an instance has already been created, the getInstance() method simply returns the existing instance.
 <hr>
 
 ### The Factory pattern
