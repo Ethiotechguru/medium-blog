@@ -56,6 +56,14 @@ class Truck extends Car {
     // class implementation
 }
 ```
+In this example, the CarFactory class has a public static method called *createCar()*, which takes in a String as a parameter called type. Depending on the value of the type parameter, the *createCar()* method creates and returns an instance of either the Sedan class or the Truck class, both classes are inherited from the Car class.
+
+This way of creating objects is very helpful because it decouples the code that creates the objects from the classes of the objects being created. So in the example, if we want to add a new type of car (let’s say “SUV”) the code that uses the factory doesn’t have to change, just the factory itself. This allows for flexibility, maintainability, and ease of modification of code.
+
+In summary, The Factory pattern is a way of creating objects without specifying the class of objects. The factory takes the responsibility of creating objects based on certain inputs and conditions, thus providing a way to create objects that conform to an interface or a base class while allowing the implementation details of the actual classes to be hidden. It’s a way to separate the object creation process from the code that uses the objects and it provide a clear and maintainable way to create objects, especially when the class of objects may change over time.
+
+<hr>
+
 ### The Observer pattern
 The Observer pattern is a design pattern that allows objects to be notified of changes to other objects. This is useful when you have multiple objects that need to be updated when something changes in another object, and you want to avoid tight coupling between the objects.
 
