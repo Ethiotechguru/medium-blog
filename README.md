@@ -120,6 +120,43 @@ In summary, the Observer pattern is a way of allowing objects to be notified of 
 
 ### The Decorator pattern
 It is a design pattern that allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class. This is useful when you want to add new features to an object without changing its class or when you want to add features to an object at runtime.
+
+Here’s an example of how the Decorator pattern works in code:
+```c++
+abstract class Beverage {
+    protected String description = "Unknown Beverage";
+    public String getDescription() {
+        return description;
+    }
+    public abstract double cost();
+}
+
+class Espresso extends Beverage {
+    public Espresso() {
+        description = "Espresso";
+    }
+    public double cost() {
+        return 1.99;
+    }
+}
+
+abstract class CondimentDecorator extends Beverage {
+    public abstract String getDescription();
+}
+
+class Mocha extends CondimentDecorator {
+    Beverage beverage;
+    public Mocha(Beverage beverage) {
+        this.beverage = beverage;
+    }
+    public String getDescription() {
+        return beverage.getDescription() + ", Mocha";
+    }
+    public double cost() {
+        return .20 + beverage.cost();
+    }
+}
+```
 <hr>
 
 ### The Command pattern
