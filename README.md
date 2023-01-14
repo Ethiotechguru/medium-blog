@@ -162,6 +162,7 @@ class Mocha extends CondimentDecorator {
 ### The Command pattern
 The Command pattern is a design pattern that encapsulates a request as an object, separating the execution of a command from the object that invokes it. This is useful when you want to have a single point of control for executing commands and when you want to be able to undo or redo those commands.
 
+Here’s an example of how the Command pattern works in code:
 ```c++
 interface Command {
     void execute();
@@ -193,8 +194,11 @@ class LightOnCommand implements Command {
     }
 }
 ```
-
 In this example, we have an interface called Command which defines two methods: execute() and undo(). The LightOnCommand class is an implementation of the Command interface, it encapsulates the request of turning on a Light object by having a Light object as a property and calling the turnOn() method on it. It also has an undo() method that turns off the light.
+
+This allows us to have a single point of control for executing commands, so we could have a remote control that holds an instance of this LightOnCommand and we can press the "on" button on the remote and it will call the execute() method on the LightOnCommand, this way we decoupled the actual execution of the command from the object that invoke it.
+
+It also allows us to undo or redo the command by calling the undo() method.
 
 In summary, the Command pattern is a way of encapsulating a request as an object, separating the execution of a command from the object that invokes it. It allows us to have a single point of control for executing commands, and it gives us the ability to undo or redo those commands. It also makes it easy to add new functionality, by creating new commands, without having to change the class that invoke it. This allows for flexibility, maintainability, and ease of modification of code, and it help to encapsulate the the what and the how of a command separately.
 <hr>
