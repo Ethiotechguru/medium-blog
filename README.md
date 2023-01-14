@@ -203,3 +203,57 @@ In summary, the Command pattern is a way of encapsulating a request as an object
 The Adapter pattern is a design pattern that allows objects with incompatible interfaces to work together by wrapping one object with an adapter. This is useful when you have an existing class with a certain interface and you want to use that class in a context where a different interface is expected.
 
 Here’s an example of how the Adapter pattern works in code:
+
+```c++
+interface AdvancedMediaPlayer {
+    void playVlc(String fileName);
+    void playMp4(String fileName);
+}
+
+class VlcPlayer implements AdvancedMediaPlayer {
+    public void playVlc(String fileName) {
+        System.out.println("Playing vlc file. Name: " + fileName);
+    }
+
+    public void playMp4(String fileName) {
+        // do nothing
+    }
+}
+
+interface MediaPlayer {
+    void play(String audioType, String fileName);
+}
+
+class MediaAdapter implements MediaPlayer {
+    AdvancedMediaPlayer advancedMusicPlayer;
+
+    public MediaAdapter(String audioType) {
+        if (audioType.equalsIgnoreCase("vlc")) {
+            advancedMusicPlayer = new VlcPlayer();
+        }
+    }
+
+    public void play(String audioType, String fileName) {
+        if (audioType.equalsIgnoreCase("vlc")) {
+            advancedMusicPlayer.playVlc(fileName);
+        }
+    }
+}
+
+class AudioPlayer implements MediaPlayer {
+    MediaAdapter mediaAdapter;
+
+    public void play(String audioType, String fileName) {
+        if (audioType.equalsIgnoreCase("mp3")) {
+            System.out.println("Playing mp3 file. Name: " + fileName);
+        } else if (audioType.equalsIgnoreCase("vlc")
+                || audioType.equalsIgnoreCase("mp4")) {
+            mediaAdapter = new MediaAdapter(audioType);
+            mediaAdapter.play(audioType, fileName);
+        } else {
+            System.out.println("Invalid media. " + audioType
+                    + " format not supported");
+        }
+    }
+}
+```
