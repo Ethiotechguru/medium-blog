@@ -261,3 +261,6 @@ class AudioPlayer implements MediaPlayer {
     }
 }
 ```
+This allows the AudioPlayer class to use the VlcPlayer class, which has a different interface, by wrapping it with the MediaAdapter class. This way it adapts the interface of the VlcPlayer class to match the interface expected by the AudioPlayer.
+
+In summary, the Adapter pattern is a way of allowing objects with incompatible interfaces to work together.
