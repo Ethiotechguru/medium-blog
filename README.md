@@ -296,3 +296,5 @@ class Computer {
     }
 }
 ```
+Imagine you want to use your computer, but it has many different parts, like the CPU, memory, hard drive, and other components. Each of these parts has its own specific functions and complexities. To turn on your computer, you need to know how each part works, and how to make them all work together. The Facade pattern allows you to hide all of that complexity behind a single, simple interface, the power button. By pressing the power button, you don’t need to know how each part works, the facade (in this case, the computer) will take care of that for you.
+
