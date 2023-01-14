@@ -272,3 +272,25 @@ In summary, the Adapter pattern is a way of allowing objects with incompatible i
 The Facade pattern is a design pattern that provides a simplified interface to a complex system of objects, classes or subsystems. Think of it like the front of a building, the facade is the front side that you can see, but behind it, there are many rooms and systems working together. The facade pattern is similar, it provides a simplified interface that hides the complexity of the systems behind it.
 
 Here’s an example of how the Facade pattern works in code:
+
+```c++
+class Computer {
+    private CPU cpu;
+    private Memory memory;
+    private HardDrive hardDrive;
+    
+    public Computer() {
+        this.cpu = new CPU();
+        this.memory = new Memory();
+        this.hardDrive = new HardDrive();
+    }
+    
+    public void startComputer() {
+        cpu.freeze();
+        memory.load();
+        hardDrive.read();
+        cpu.jump();
+        cpu.execute();
+    }
+}
+```
