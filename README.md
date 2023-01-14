@@ -261,6 +261,8 @@ class AudioPlayer implements MediaPlayer {
     }
 }
 ```
+In this example, we have the AdvancedMediaPlayer interface, which defines two methods for playing audio files, playVlc() and playMp4(). The VlcPlayer class is an implementation of AdvancedMediaPlayer that plays .vlc files. We also have the MediaPlayer interface, which defines a play() method that takes in the audio type and file name. The AudioPlayer class is an implementation of the MediaPlayer interface and it uses the MediaAdapter class to play audio files of other types, in this case, vlc files. The MediaAdapter class, takes in the audio type and creates an instance of the AdvancedMediaPlayer that can play that type of audio file, in this case, VlcPlayer, and it implements the play() method of the MediaPlayer interface by calling the appropriate method on the AdvancedMediaPlayer it holds an instance of.
+
 This allows the AudioPlayer class to use the VlcPlayer class, which has a different interface, by wrapping it with the MediaAdapter class. This way it adapts the interface of the VlcPlayer class to match the interface expected by the AudioPlayer.
 
 In summary, the Adapter pattern is a way of allowing objects with incompatible interfaces to work together.
