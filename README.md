@@ -201,3 +201,5 @@ In summary, the Command pattern is a way of encapsulating a request as an object
 
 ### The Adapter pattern
 The Adapter pattern is a design pattern that allows objects with incompatible interfaces to work together by wrapping one object with an adapter. This is useful when you have an existing class with a certain interface and you want to use that class in a context where a different interface is expected.
+
+Here’s an example of how the Adapter pattern works in code:
