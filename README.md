@@ -1,4 +1,4 @@
-# medium-blog
+# medium-blog```
 
 OOP Design pattern blog for medium.com
 ## OOP Design Pattern
@@ -15,7 +15,7 @@ class DatabaseConnection {
     private static DatabaseConnection instance;
 
     private DatabaseConnection() {
-        // private constructor to prevent outside instantiation
+        // private constructor to prevent outside instantiation`
     }
 
     public static DatabaseConnection getInstance() {
