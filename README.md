@@ -274,6 +274,7 @@ The Facade pattern is a design pattern that provides a simplified interface to a
 
 In this example, the Computer class acts as a facade for a complex system of objects (CPU, Memory and HardDrive) by providing a simplified method startComputer() that the client can use to start the computer, this method hide the complexity of the system by calling methods on the objects of the subsystem. This way the client doesn't need to know the details of how the CPU, Memory and HardDrive work, it just needs to know how to start the computer.
 
+Here’s an example of how the Facade pattern works in code:
 ```c++
 class Computer {
     private CPU cpu;
