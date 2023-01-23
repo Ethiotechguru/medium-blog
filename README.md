@@ -299,3 +299,41 @@ class Computer {
 Imagine you want to use your computer, but it has many different parts, like the CPU, memory, hard drive, and other components. Each of these parts has its own specific functions and complexities. To turn on your computer, you need to know how each part works, and how to make them all work together. The Facade pattern allows you to hide all of that complexity behind a single, simple interface, the power button. By pressing the power button, you don’t need to know how each part works, the facade (in this case, the computer) will take care of that for you.
 
 In this example, the Computer class acts as a facade for a complex system of objects (CPU, Memory and HardDrive) by providing a simplified method startComputer() that the client can use to start the computer, this method hide the complexity of the system by calling methods on the objects of the subsystem. This way the client doesn't need to know the details of how the CPU, Memory and HardDrive work, it just needs to know how to start the computer.
+
+The Template Method pattern
+The Template Method pattern is a design pattern that defines the skeleton of an algorithm in a method, called the template method, and allows subclasses to redefine certain steps of the algorithm without changing its structure. Think of it like a recipe for making something, where the recipe defines the general steps for making the dish, but allows for variations in certain steps.
+
+For example, let’s say we want to make a pizza, the template method could be the method that sets up the basic steps for making a pizza, like preparing the dough, adding the sauce, and baking the pizza. But, different types of pizza, like Margherita or Pepperoni, may have different ingredients added, like cheese or pepperoni. The template method allows subclasses to implement these specific steps while keeping the general steps consistent.
+
+Here’s an example of how the Template Method pattern works in code:
+```c++
+abstract class Game {
+    abstract void initialize();
+    abstract void startPlay();
+    abstract void endPlay();
+
+    // template method
+    public final void play() {
+        initialize();
+        startPlay();
+        endPlay();
+    }
+}
+
+class Cricket extends Game {
+    @Override
+    void endPlay() {
+        System.out.println("Cricket Game Finished!");
+    }
+
+    @Override
+    void initialize() {
+        System.out.println("Cricket Game Initialized! Start playing.");
+    }
+
+    @Override
+    void startPlay() {
+        System.out.println("Cricket Game Started. Enjoy the game!");
+    }
+}
+```
