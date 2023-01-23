@@ -300,6 +300,7 @@ Imagine you want to use your computer, but it has many different parts, like the
 
 In this example, the Computer class acts as a facade for a complex system of objects (CPU, Memory and HardDrive) by providing a simplified method startComputer() that the client can use to start the computer, this method hide the complexity of the system by calling methods on the objects of the subsystem. This way the client doesn't need to know the details of how the CPU, Memory and HardDrive work, it just needs to know how to start the computer.
 
+
 The Template Method pattern
 The Template Method pattern is a design pattern that defines the skeleton of an algorithm in a method, called the template method, and allows subclasses to redefine certain steps of the algorithm without changing its structure. Think of it like a recipe for making something, where the recipe defines the general steps for making the dish, but allows for variations in certain steps.
 
@@ -346,8 +347,27 @@ This allows the behavior of the Context class to change depending on its interna
 
 An example in the real world, a vending machine, it can have multiple states, for example, idle, dispensing and sold out, each state would have its own behavior, like Idle state, it can accept money and change state to dispensing state, dispensing state will give the product to the customer and change state to Idle state or Sold out state, that won’t allow the customer to buy anything and will show an appropriate message.
 
+```c++
+class Context {
+    private State state;
+
+    public Context() {
+        state = null;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public State getState() {
+        return state;
+    }
+}
+```
+
 This pattern allows you to create a single class that represents multiple states and behaviors, instead of having a separate class for each state and behavior. This makes it easier to add new states and behaviors to the object without having to make changes to the object’s class. It also makes the code more flexible and maintainable because the different states and behaviors are separated out into separate classes.
 
 In summary, The State pattern is a way to change the behavior of an object depending on its internal state, it separates the behavior of an object from the object itself, by creating separate objects for each state and the object holds a reference to one of these state objects. This allows the object to change its behavior without changing its class and makes the code more flexible and maintainable.
+
 
 
