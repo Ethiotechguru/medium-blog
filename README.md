@@ -337,3 +337,17 @@ class Cricket extends Game {
     }
 }
 ```
+
+In this example, we have a Context class that can have multiple states represented by the State interface and different classes implements the State interface to represent different states. The Context class holds a reference to one of the state objects and it can change it's internal state by changing the reference to the state objects, we can call setState() method on the context to change it's state. The doAction() method is implemented by each state and it will behave differently depending on the state.
+
+For example, if the Context class is in the StartState, when we call the doAction() method, it will print "Player is in start state". If we change the state to StopState and call the doAction() method again, it will print "Player is in stop state"
+
+This allows the behavior of the Context class to change depending on its internal state, without changing its class.
+
+An example in the real world, a vending machine, it can have multiple states, for example, idle, dispensing and sold out, each state would have its own behavior, like Idle state, it can accept money and change state to dispensing state, dispensing state will give the product to the customer and change state to Idle state or Sold out state, that won’t allow the customer to buy anything and will show an appropriate message.
+
+This pattern allows you to create a single class that represents multiple states and behaviors, instead of having a separate class for each state and behavior. This makes it easier to add new states and behaviors to the object without having to make changes to the object’s class. It also makes the code more flexible and maintainable because the different states and behaviors are separated out into separate classes.
+
+In summary, The State pattern is a way to change the behavior of an object depending on its internal state, it separates the behavior of an object from the object itself, by creating separate objects for each state and the object holds a reference to one of these state objects. This allows the object to change its behavior without changing its class and makes the code more flexible and maintainable.
+
+
