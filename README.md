@@ -299,3 +299,21 @@ class Computer {
 Imagine you want to use your computer, but it has many different parts, like the CPU, memory, hard drive, and other components. Each of these parts has its own specific functions and complexities. To turn on your computer, you need to know how each part works, and how to make them all work together. The Facade pattern allows you to hide all of that complexity behind a single, simple interface, the power button. By pressing the power button, you don’t need to know how each part works, the facade (in this case, the computer) will take care of that for you.
 
 In this example, the Computer class acts as a facade for a complex system of objects (CPU, Memory and HardDrive) by providing a simplified method startComputer() that the client can use to start the computer, this method hide the complexity of the system by calling methods on the objects of the subsystem. This way the client doesn't need to know the details of how the CPU, Memory and HardDrive work, it just needs to know how to start the computer.
+
+```c++
+class Context {
+    private State state;
+
+    public Context() {
+        state = null;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public State getState() {
+        return state;
+    }
+}
+```
