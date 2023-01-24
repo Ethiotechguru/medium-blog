@@ -371,8 +371,16 @@ In summary, The State pattern is a way to change the behavior of an object depen
 
 
 
+## Names
 Abebe
 Solomon
 Samuel
 Lilly
 Maxine
+
+## Countries
+Hello Africa
+Hello EThiopia
+Hello America
+Hello World
+
