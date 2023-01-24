@@ -369,4 +369,9 @@ This pattern allows you to create a single class that represents multiple states
 
 In summary, The State pattern is a way to change the behavior of an object depending on its internal state, it separates the behavior of an object from the object itself, by creating separate objects for each state and the object holds a reference to one of these state objects. This allows the object to change its behavior without changing its class and makes the code more flexible and maintainable.
 
+
+
 Hello Africa
+Hello EThiopia
+Hello America
+Hello World
