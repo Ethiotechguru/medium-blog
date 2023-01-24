@@ -383,3 +383,17 @@ Hello Africa
 Hello EThiopia
 Hello America
 Hello World
+
+# Cities In Washington State
+
+- Seattle
+- Lynnwood
+- Bothle
+- Bellevue
+- Edmonds
+- Redmond
+- Woodnvill
+- Mill Creek
+- Mount Lake Terrece
+
+
