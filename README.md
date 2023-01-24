@@ -389,4 +389,12 @@ argoba kebele,
 somo kebele
 tomi kebele
 
+# Cities In Washington State
+
+- Seattle
+- Lynnwood
+- Bothle
+- Bellevue
+- Edmonds
+- Redmond
 
